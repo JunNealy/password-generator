@@ -1,0 +1,10 @@
+:root {
+  --bg-color-dark: #18171f;
+  --bg-color-accent-dark: #24232c;
+  --strength-strong: #a4ffaf;
+  --strength-moderate: #f8cd65;
+  --strength-weak: #fb7c58;
+  --strength-minimal: #f64a4a;
+  --typography-light: #e6e5ea;
+  --typography-dull: #817d92;
+}

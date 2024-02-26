@@ -22,23 +22,33 @@
         name="character-length"
       />
       <div class="password-option">
-        <input type="checkbox" name="uppercase" id="uppercase" />
+        <input
+          type="checkbox"
+          name="uppercase"
+          id="uppercase"
+          checked="false"
+        />
         <label for="uppercase">Include Uppercase Letters</label>
       </div>
       <div class="password-option">
-        <input type="checkbox" id="lowercase" name="lowercase" />
+        <input
+          type="checkbox"
+          id="lowercase"
+          name="lowercase"
+          checked="false"
+        />
         <label for="lowercase">Include Lowercase Letters</label>
       </div>
       <div class="password-option">
-        <input type="checkbox" id="numbers" name="numbers" />
+        <input type="checkbox" id="numbers" name="numbers" checked="false" />
         <label for="numbers">Include Numbers</label>
       </div>
       <div class="password-option">
-        <input type="checkbox" id="symbols" name="symbols" />
+        <input type="checkbox" id="symbols" name="symbols" checked="false" />
         <label for="symbols">Include Symbols</label>
       </div>
       <div>strength</div>
-      <button>generate 🡪</button>
+      <button id="generate">generate 🡪</button>
     </div>
   </body>
 

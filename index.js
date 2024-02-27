@@ -14,7 +14,7 @@ const generate = document.getElementById('generate');
 
 // state management
 let state = {
-  length: 10,
+  length: 12,
   uppercase: false,
   lowercase: false,
   numbers: false,

@@ -111,15 +111,55 @@ textarea:not([rows]) {
 /* Typography */
 /* -------------------- */
 
-/* .heading-l {
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../Fonts/JetBrainsMono-Regular.eot');
+  src: url('../Fonts/JetBrainsMono-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../Fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('../Fonts/JetBrainsMono-Regular.woff') format('woff'),
+    url('../Fonts/JetBrainsMono-Regular.ttf') format('truetype'),
+    url('../Fonts/JetBrainsMono-Regular.svg#JetBrainsMono-Regular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-} */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../Fonts/JetBrainsMono-Italic.eot');
+  src: url('../Fonts/JetBrainsMono-Italic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../Fonts/JetBrainsMono-Italic.woff2') format('woff2'),
+    url('../Fonts/JetBrainsMono-Italic.woff') format('woff'),
+    url('../Fonts/JetBrainsMono-Italic.ttf') format('truetype'),
+    url('../Fonts/JetBrainsMono-Italic.svg#JetBrainsMono-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+.heading-l {
+  font-size: 2rem;
+  line-height: 2.75rem;
+}
+.heading-m {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+.body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 
 /* -------------------- */
 /* General */
 /* -------------------- */
 
 body {
+  font-family: 'JetBrains Mono';
+  color: white;
   height: 100vh;
   display: flex;
   flex-direction: column;

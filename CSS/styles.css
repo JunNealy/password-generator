@@ -168,12 +168,6 @@ body {
   background-color: var(--bg-color-dark);
 }
 
-.password-component {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg-color-accent-dark);
-}
-
 input[type='checkbox'] {
   background-color: red;
 }
@@ -229,3 +223,13 @@ input[type='checkbox'] {
   background: none;
   cursor: pointer;
 } */
+#character-length-label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+#character-length-display {
+  color: var(--strength-strong);
+}

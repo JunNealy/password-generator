@@ -165,6 +165,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-color-dark);
 }
 
 .password-component {
@@ -176,4 +177,58 @@ body {
 
 input[type='checkbox'] {
   background-color: red;
+}
+
+.container {
+  width: 95vw;
+  max-width: 25rem;
+  height: 20rem;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: var(--typography-dull);
+  margin-bottom: 0.75rem;
+}
+.password-output {
+  background-color: grey;
+
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: var(--bg-color-accent-dark);
+  padding: 0.75rem 1rem;
+}
+
+.password-config {
+  padding: 0 1rem;
+  width: 100%;
+  background-color: var(--bg-color-accent-dark);
+}
+
+#generate {
+  width: 100%;
+  background-color: var(--strength-strong);
+  border: 2px solid var(--strength-strong);
+  padding: 0.5rem 0;
+}
+
+#generate:hover {
+  background-color: var(--bg-color-accent-dark);
+  color: var(--strength-strong);
+}
+
+#strength-rating {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--bg-color-dark);
+  background-color: var(--bg-color-dark);
+}
+
+#character-length {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }

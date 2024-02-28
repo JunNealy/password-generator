@@ -172,7 +172,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color-accent-dark);
-  padding: 1.5rem 1.5rem;
 }
 
 input[type='checkbox'] {
@@ -181,9 +180,7 @@ input[type='checkbox'] {
 
 .container {
   width: 95vw;
-  max-width: 25rem;
-  height: 20rem;
-  border: 2px solid red;
+  max-width: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,7 +200,7 @@ input[type='checkbox'] {
 }
 
 .password-config {
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   width: 100%;
   background-color: var(--bg-color-accent-dark);
 }
@@ -227,8 +224,8 @@ input[type='checkbox'] {
   background-color: var(--bg-color-dark);
 }
 
-#character-length {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+/* #character-length {
+  appearance: none;
+  background: none;
+  cursor: pointer;
+} */

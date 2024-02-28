@@ -10,15 +10,19 @@ const lowercase = document.getElementById('lowercase');
 const symbols = document.getElementById('symbols');
 const numbers = document.getElementById('numbers');
 const characterLength = document.getElementById('character-length');
+const characterLengthDisplay = document.getElementById(
+  'character-length-display'
+);
 const generate = document.getElementById('generate');
+const passwordOutput = document.getElementById('password-output');
 
 // state management
 let state = {
   length: 12,
-  uppercase: false,
-  lowercase: false,
-  numbers: false,
-  symbols: false,
+  uppercase: true,
+  lowercase: true,
+  numbers: true,
+  symbols: true,
 };
 
 function updateState(option, value) {
@@ -46,6 +50,8 @@ addListenerAndUpdate(numbers, 'numbers');
 characterLength.addEventListener('change', function () {
   let newState = characterLength.value;
   updateState('length', newState);
+  characterLengthDisplay.innerText = newState;
+  console.log(newState);
   console.log(getState());
 });
 
@@ -75,5 +81,5 @@ generate.addEventListener('click', function () {
     let character = Math.floor(Math.random() * charString.length);
     password += charString[character];
   }
-  console.log(password);
+  passwordOutput.innerText = password;
 });

@@ -9,10 +9,12 @@
   <body>
     <div><p>Password Generator</p></div>
     <div class="password-component">
-      <div class="password-output">P4SSw0Rd</div>
+      <div id="password-output">P4SSw0Rd</div>
     </div>
     <div class="password-component">
-      <label for="num-characters">Character Length 10</label>
+      <label for="num-characters"
+        >Character Length <span id="character-length-display">10</span>
+      </label>
       <input
         type="range"
         min="1"

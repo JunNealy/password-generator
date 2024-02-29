@@ -26,6 +26,28 @@ let state = {
   symbols: true,
 };
 
+function calcStrength() {
+  let str = 0;
+  if (state[uppercase] === true) {
+    str += 1;
+  }
+  if (state[lowercase] === true) {
+    str += 1;
+  }
+  if (state[numbers] === true) {
+    str += 1;
+  }
+  if (state[symbols] === true) {
+    str += 1;
+  }
+  if (state[length] >= 5) {
+    +1;
+  }
+  if (state[length]) {
+    +1;
+  }
+}
+
 function updateState(option, value) {
   state[option] = value;
 }

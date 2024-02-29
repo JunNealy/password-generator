@@ -23,32 +23,37 @@
         id="character-length"
         name="character-length"
       />
-          <div class="password-option">
-        <input
+        <label class="option" for="uppercase">
+          <input
           type="checkbox"
           name="uppercase"
           id="uppercase"
           checked="false"
-        />
-        <label for="uppercase">Include Uppercase Letters</label>
-      </div>
-      <div class="password-option">
-        <input
+          /> 
+          <span class="checkmark"></span>
+          Include Uppercase Letters
+        </label>
+        <label class="option" for="lowercase">
+          <input
           type="checkbox"
           id="lowercase"
           name="lowercase"
           checked="false"
-        />
-        <label for="lowercase">Include Lowercase Letters</label>
-      </div>
-      <div class="password-option">
-        <input type="checkbox" id="numbers" name="numbers" checked="false" />
-        <label for="numbers">Include Numbers</label>
-      </div>
-      <div class="password-option">
-        <input type="checkbox" id="symbols" name="symbols" checked="false" />
-        <label for="symbols">Include Symbols</label>
-      </div>
+          /> 
+          <span class="checkmark"></span>
+          Include Lowercase Letters
+        </label>
+          <label class="option" for="numbers">
+          <input type="checkbox" id="numbers" name="numbers" checked="false" />
+          <span class="checkmark"></span>
+          Include Numbers
+        </label>
+        </label>
+          <label class="option" for="symbols">
+          <input type="checkbox" id="symbols" name="symbols" checked="false" />
+          <span class="checkmark"></span>
+          Include Symbols
+        </label>
         <div id="strength-rating">STRENGTH 
           <div class="strength-bar-container"><div class="strength-bar"></div><div class="strength-bar"></div><div class="strength-bar"></div><div class="strength-bar"></div></div>
         </div>
@@ -59,8 +64,6 @@
   <script src="./JS/index.js"></script>
 </html>
 
-<!-- <div><p>Password Generator</p></div>
-  
 
-      
-    </div> -->
+
+       

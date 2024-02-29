@@ -242,6 +242,11 @@ input[type='checkbox'] {
 
 #copy-btn {
   cursor: pointer;
+  color: var(--strength-strong);
+}
+
+#copy-btn:hover {
+  color: var(--typography-light);
 }
 
 .strength-bar-container {
@@ -256,4 +261,65 @@ input[type='checkbox'] {
 
 .strength-bar + .strength-bar {
   margin-left: 0.25rem;
+}
+
+.option {
+  display: flex;
+  flex-direction: row;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.option:hover input ~ .checkmark {
+  border: 2px solid var(--strength-strong);
+}
+
+.option input:checked ~ .checkmark {
+  background-color: var(--strength-strong);
+  border: 2px solid var(--strength-strong);
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.option input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.option .checkmark:after {
+  left: 0.25rem;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--bg-color-dark);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  border: 2px white solid;
 }

@@ -15,6 +15,7 @@ const characterLengthDisplay = document.getElementById(
 );
 const generate = document.getElementById('generate');
 const passwordOutput = document.getElementById('password-output');
+const copyButton = document.getElementById('copy-btn');
 
 // state management
 let state = {
@@ -53,6 +54,11 @@ characterLength.addEventListener('change', function () {
   characterLengthDisplay.innerText = newState;
   console.log(newState);
   console.log(getState());
+});
+
+copyButton.addEventListener('click', function () {
+  const copyText = passwordOutput.innerText;
+  navigator.clipboard.writeText(copyText);
 });
 
 function concat(state) {

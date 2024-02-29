@@ -184,9 +184,11 @@ input[type='checkbox'] {
   color: var(--typography-dull);
   margin-bottom: 0.75rem;
 }
-.password-output {
+#password-output {
   background-color: grey;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin-bottom: 1rem;
   background-color: var(--bg-color-accent-dark);
@@ -204,6 +206,7 @@ input[type='checkbox'] {
   background-color: var(--strength-strong);
   border: 2px solid var(--strength-strong);
   padding: 0.5rem 0;
+  cursor: pointer;
 }
 
 #generate:hover {
@@ -212,6 +215,9 @@ input[type='checkbox'] {
 }
 
 #strength-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   border: 2px solid var(--bg-color-dark);
@@ -232,4 +238,22 @@ input[type='checkbox'] {
 
 #character-length-display {
   color: var(--strength-strong);
+}
+
+#copy-btn {
+  cursor: pointer;
+}
+
+.strength-bar-container {
+  display: flex;
+  flex-direction: row;
+}
+.strength-bar {
+  height: 1.5rem;
+  width: 10px;
+  border: 2px solid white;
+}
+
+.strength-bar + .strength-bar {
+  margin-left: 0.25rem;
 }

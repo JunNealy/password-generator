@@ -249,7 +249,7 @@ input[type='checkbox'] {
   color: var(--typography-light);
 }
 
-.strength-bar-container {
+#strength-bar-container {
   display: flex;
   flex-direction: row;
 }

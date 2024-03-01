@@ -15,16 +15,21 @@ const characterLengthDisplay = document.getElementById(
 );
 const generate = document.getElementById('generate');
 const passwordOutput = document.getElementById('password-output');
+const passwordOutputString = document.getElementById('password-output-string');
 const copyButton = document.getElementById('copy-btn');
+const strengthBarContainer = document.getElementById('strength-bar-container');
+const strengthBars = strengthBarContainer.children;
+
+console.log(strengthBars);
 
 // state management
 let state = {
-  length: 12,
+  length: 10,
   uppercase: true,
   lowercase: true,
   numbers: true,
   symbols: true,
-  strength: undefined,
+  strength: 6,
 };
 
 function calcStrength(state) {
@@ -58,9 +63,29 @@ function calcStrength(state) {
 
 function updateStrength() {
   state.strength = calcStrength(state);
-  if (state.strength / 2 >= 2) {
+  for (let i = 0; i < strengthBars.length; i++) {
+    strengthBars[i].style.backgroundColor = '';
+    strengthBars[i].style.border = '';
   }
-  console.log(state.strength);
+  if (state.strength <= 2) {
+    strengthBars[0].style.backgroundColor = '#f64a4a';
+    strengthBars[0].style.border = '2px solid #f64a4a';
+  } else if (state.strength <= 4) {
+    for (let i = 0; i < 2; i++) {
+      strengthBars[i].style.backgroundColor = '#fb7c58';
+      strengthBars[i].style.border = '2px solid #fb7c58';
+    }
+  } else if (state.strength <= 6) {
+    for (let i = 0; i < 3; i++) {
+      strengthBars[i].style.backgroundColor = '#ffd966';
+      strengthBars[i].style.border = '2px solid #ffd966';
+    }
+  } else if (state.strength <= 8) {
+    for (let i = 0; i < 4; i++) {
+      strengthBars[i].style.backgroundColor = '#a4ffaf';
+      strengthBars[i].style.border = '2px solid #a4ffaf';
+    }
+  }
 }
 
 function updateState(option, value) {
@@ -96,7 +121,7 @@ characterLength.addEventListener('change', function () {
 });
 
 copyButton.addEventListener('click', function () {
-  const copyText = passwordOutput.innerText;
+  const copyText = passwordOutputString.innerText;
   navigator.clipboard.writeText(copyText);
 });
 
@@ -126,5 +151,6 @@ generate.addEventListener('click', function () {
     let character = Math.floor(Math.random() * charString.length);
     password += charString[character];
   }
-  passwordOutput.innerText = password;
+  updateStrength();
+  passwordOutputString.innerText = password;
 });

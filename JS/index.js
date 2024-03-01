@@ -24,28 +24,43 @@ let state = {
   lowercase: true,
   numbers: true,
   symbols: true,
+  strength: undefined,
 };
 
-function calcStrength() {
+function calcStrength(state) {
   let str = 0;
-  if (state[uppercase] === true) {
+  if (state.uppercase) {
     str += 1;
   }
-  if (state[lowercase] === true) {
+  if (state.lowercase) {
     str += 1;
   }
-  if (state[numbers] === true) {
+  if (state.numbers) {
     str += 1;
   }
-  if (state[symbols] === true) {
+  if (state.symbols) {
     str += 1;
   }
-  if (state[length] >= 5) {
-    +1;
+  if (state.length >= 5) {
+    str += 1;
   }
-  if (state[length]) {
-    +1;
+  if (state.length >= 10) {
+    str += 1;
   }
+  if (state.length >= 15) {
+    str += 1;
+  }
+  if (state.length >= 20) {
+    str += 1;
+  }
+  return str;
+}
+
+function updateStrength() {
+  state.strength = calcStrength(state);
+  if (state.strength / 2 >= 2) {
+  }
+  console.log(state.strength);
 }
 
 function updateState(option, value) {
@@ -61,6 +76,7 @@ function addListenerAndUpdate(element, option) {
   element.addEventListener('click', function () {
     let newState = element.checked;
     updateState(option, newState);
+    updateStrength();
     console.log(getState());
   });
 }
@@ -74,6 +90,7 @@ characterLength.addEventListener('change', function () {
   let newState = characterLength.value;
   updateState('length', newState);
   characterLengthDisplay.innerText = newState;
+  updateStrength();
   console.log(newState);
   console.log(getState());
 });

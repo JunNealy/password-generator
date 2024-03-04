@@ -154,3 +154,18 @@ generate.addEventListener('click', function () {
   updateStrength();
   passwordOutputString.innerText = password;
 });
+
+var slider = document.getElementById('myRange');
+var output = document.getElementById('slider-value');
+output.innerHTML = slider.value;
+
+slider.oninput = function () {
+  output.innerHTML = this.value;
+  var gradientValue = ((this.value - this.min) / (this.max - this.min)) * 100;
+  this.style.background =
+    'linear-gradient(to right, #4CAF50 0%, #4CAF50 ' +
+    gradientValue +
+    '%, #d3d3d3 ' +
+    gradientValue +
+    '%, #d3d3d3 100%)';
+};

@@ -163,9 +163,9 @@ slider.oninput = function () {
   output.innerHTML = this.value;
   var gradientValue = ((this.value - this.min) / (this.max - this.min)) * 100;
   this.style.background =
-    'linear-gradient(to right, #4CAF50 0%, #4CAF50 ' +
+    'linear-gradient(to right, #a4ffaf 0%, #a4ffaf ' +
     gradientValue +
-    '%, #d3d3d3 ' +
+    '%, #18171f ' +
     gradientValue +
-    '%, #d3d3d3 100%)';
+    '%, #18171f 100%)';
 };

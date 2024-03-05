@@ -332,34 +332,55 @@ input[type='checkbox'] {
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 15px;
+  height: 5px;
   /* border-radius: 10px; */
   background: linear-gradient(
     to right,
-    #4caf50 0%,
-    #4caf50 50%,
-    #d3d3d3 50%,
-    #d3d3d3 100%
+    var(--strength-strong) 0%,
+    var(--strength-strong) 50%,
+    var(--bg-color-dark) 50%,
+    var(--bg-color-dark) 100%
   );
   outline: none;
-  opacity: 0.7;
+
   transition: opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
-  background: #4caf50;
+  background: var(--typography-light);
+  border: 2px solid var(--typography-light);
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
-  background: #4caf50;
+  background: var(--typography-light);
+  border: 2px solid var(--typography-light);
   cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: var(--bg-color-dark);
+  border: 2px solid var(--strength-strong);
+}
+.slider::-webkit-slider-thumb:active {
+  background: var(--bg-color-dark);
+  border: 2px solid var(--strength-strong);
+}
+
+.slider::-moz-range-thumb:hover {
+  background: var(--bg-color-dark);
+  border: 2px solid var(--strength-strong);
+}
+
+.slider::-moz-range-thumb:active {
+  background: var(--bg-color-dark);
+  border: 2px solid var(--strength-strong);
 }

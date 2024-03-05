@@ -19,6 +19,8 @@ const passwordOutputString = document.getElementById('password-output-string');
 const copyButton = document.getElementById('copy-btn');
 const strengthBarContainer = document.getElementById('strength-bar-container');
 const strengthBars = strengthBarContainer.children;
+const slider = document.getElementById('myRange');
+const output = document.getElementById('slider-value');
 
 console.log(strengthBars);
 
@@ -111,8 +113,8 @@ addListenerAndUpdate(lowercase, 'lowercase');
 addListenerAndUpdate(symbols, 'symbols');
 addListenerAndUpdate(numbers, 'numbers');
 
-characterLength.addEventListener('change', function () {
-  let newState = characterLength.value;
+myRange.addEventListener('change', function () {
+  let newState = myRange.value;
   updateState('length', newState);
   characterLengthDisplay.innerText = newState;
   updateStrength();
@@ -155,13 +157,12 @@ generate.addEventListener('click', function () {
   passwordOutputString.innerText = password;
 });
 
-var slider = document.getElementById('myRange');
-var output = document.getElementById('slider-value');
-output.innerHTML = slider.value;
+characterLengthDisplay.innerHTML = slider.value;
 
 slider.oninput = function () {
-  output.innerHTML = this.value;
-  var gradientValue = ((this.value - this.min) / (this.max - this.min)) * 100;
+  // output.innerHTML = this.value;
+  characterLengthDisplay.innerHTML = this.value;
+  gradientValue = ((this.value - this.min) / (this.max - this.min)) * 100;
   this.style.background =
     'linear-gradient(to right, #a4ffaf 0%, #a4ffaf ' +
     gradientValue +

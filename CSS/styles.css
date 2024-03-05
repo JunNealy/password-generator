@@ -195,6 +195,11 @@ input[type='checkbox'] {
   padding: 0.75rem 1rem;
 }
 
+#password-output-string {
+  padding: none;
+  margin: none;
+}
+
 .password-config {
   padding: 1rem 1rem;
   width: 100%;
@@ -330,6 +335,7 @@ input[type='checkbox'] {
 }
 
 .slider {
+  -appearance: none;
   -webkit-appearance: none;
   width: 100%;
   height: 5px;
@@ -383,4 +389,8 @@ input[type='checkbox'] {
 .slider::-moz-range-thumb:active {
   background: var(--bg-color-dark);
   border: 2px solid var(--strength-strong);
+}
+
+.slider-container {
+  margin-bottom: 1rem;
 }

@@ -21,7 +21,7 @@ const strengthBarContainer = document.getElementById('strength-bar-container');
 const strengthBars = strengthBarContainer.children;
 const slider = document.getElementById('myRange');
 const output = document.getElementById('slider-value');
-const copyConfirm = document.querySelector('copy-confirm');
+const copyConfirm = document.querySelector('.copy-confirm');
 
 console.log(strengthBars);
 
@@ -163,9 +163,10 @@ function concat(state) {
 }
 
 copyButton.addEventListener('click', function () {
-  copyConfirm.innerText = 'copied!';
   const copyText = passwordOutputString.innerText;
   navigator.clipboard.writeText(copyText);
+  copyConfirm.innerText = 'COPIED';
+  console.log('copy click');
 });
 
 generate.addEventListener('click', function () {

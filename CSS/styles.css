@@ -147,11 +147,11 @@ textarea:not([rows]) {
   line-height: 2.75rem;
 }
 .heading-m {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.body {
-  font-size: 1rem;
+.body-text {
+  font-size: 0.75rem;
   line-height: 1.5rem;
 }
 
@@ -402,4 +402,22 @@ input[type='checkbox'] {
 
 .slider-container {
   margin-bottom: 1rem;
+}
+
+.copy-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.copy-confirm {
+  margin-right: 0.5rem;
+}
+
+.green {
+  color: var(--strength-strong);
+}
+
+.light {
+  color: var(--typography-dull);
 }

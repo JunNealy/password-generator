@@ -45,6 +45,7 @@ function getState() {
 
 //Initialize page
 function initializePage() {
+  updateStrength();
   // Checkbox visuals
   uppercase.checked = state.uppercase;
   lowercase.checked = state.lowercase;
@@ -55,8 +56,6 @@ function initializePage() {
   slider.value = state.length;
   characterLengthDisplay.innerText = state.length;
   output.innerText = state.length;
-
-  updateStrength();
 }
 
 // Call initializePage function when the page loads
@@ -162,13 +161,6 @@ function concat(state) {
   return potentialChars;
 }
 
-copyButton.addEventListener('click', function () {
-  const copyText = passwordOutputString.innerText;
-  navigator.clipboard.writeText(copyText);
-  copyConfirm.innerText = 'COPIED';
-  console.log('copy click');
-});
-
 generate.addEventListener('click', function () {
   if (
     !state.uppercase &&
@@ -183,6 +175,14 @@ generate.addEventListener('click', function () {
     state.strength = 0;
     return;
   }
+
+  copyConfirm.innerText = '';
+  copyButton.addEventListener('click', function () {
+    const copyText = passwordOutputString.innerText;
+    navigator.clipboard.writeText(copyText);
+    copyConfirm.innerText = 'COPIED';
+    console.log('copy click');
+  });
 
   passwordOutputString.style.color = '#e6e5ea';
   passwordOutputString.className = '';

@@ -27,7 +27,7 @@ console.log(strengthBars);
 
 // state management
 let state = {
-  length: 10,
+  length: 12,
   uppercase: true,
   lowercase: true,
   numbers: true,
@@ -35,6 +35,34 @@ let state = {
   strength: 6,
 };
 
+function updateState(option, value) {
+  state[option] = value;
+}
+
+function getState() {
+  return state;
+}
+
+//Initialize page
+function initializePage() {
+  // Checkbox visuals
+  uppercase.checked = state.uppercase;
+  lowercase.checked = state.lowercase;
+  symbols.checked = state.symbols;
+  numbers.checked = state.numbers;
+
+  // Slider thumb position
+  slider.value = state.length;
+  characterLengthDisplay.innerText = state.length;
+  output.innerText = state.length;
+
+  updateStrength();
+}
+
+// Call initializePage function when the page loads
+window.addEventListener('load', initializePage);
+
+//Password Strength
 function calcStrength(state) {
   let str = 0;
   if (state.uppercase) {
@@ -91,15 +119,6 @@ function updateStrength() {
   }
 }
 
-function updateState(option, value) {
-  state[option] = value;
-}
-
-function getState() {
-  return state;
-}
-
-//State Change
 function addListenerAndUpdate(element, option) {
   element.addEventListener('click', function () {
     let newState = element.checked;
@@ -114,6 +133,7 @@ addListenerAndUpdate(lowercase, 'lowercase');
 addListenerAndUpdate(symbols, 'symbols');
 addListenerAndUpdate(numbers, 'numbers');
 
+//custom range
 myRange.addEventListener('change', function () {
   let newState = myRange.value;
   updateState('length', newState);
@@ -123,6 +143,7 @@ myRange.addEventListener('change', function () {
   console.log(getState());
 });
 
+//build password generation string
 function concat(state) {
   let { uppercase, lowercase, symbols, numbers } = state;
   let potentialChars = '';
@@ -158,6 +179,7 @@ generate.addEventListener('click', function () {
     passwordOutputString.className = 'no-copy';
     passwordOutputString.style.color = '#817d92';
     passwordOutputString.innerText = 'Select at least one option';
+    state.strength = 0;
     return;
   }
 

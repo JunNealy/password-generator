@@ -21,6 +21,7 @@ const strengthBarContainer = document.getElementById('strength-bar-container');
 const strengthBars = strengthBarContainer.children;
 const slider = document.getElementById('myRange');
 const output = document.getElementById('slider-value');
+const copyConfirm = document.querySelector('copy-confirm');
 
 console.log(strengthBars);
 
@@ -122,11 +123,6 @@ myRange.addEventListener('change', function () {
   console.log(getState());
 });
 
-copyButton.addEventListener('click', function () {
-  const copyText = passwordOutputString.innerText;
-  navigator.clipboard.writeText(copyText);
-});
-
 function concat(state) {
   let { uppercase, lowercase, symbols, numbers } = state;
   let potentialChars = '';
@@ -145,7 +141,28 @@ function concat(state) {
   return potentialChars;
 }
 
+copyButton.addEventListener('click', function () {
+  copyConfirm.innerText = 'copied!';
+  const copyText = passwordOutputString.innerText;
+  navigator.clipboard.writeText(copyText);
+});
+
 generate.addEventListener('click', function () {
+  if (
+    !state.uppercase &&
+    !state.lowercase &&
+    !state.numbers &&
+    !state.symbols
+  ) {
+    updateStrength();
+    passwordOutputString.className = 'no-copy';
+    passwordOutputString.style.color = '#817d92';
+    passwordOutputString.innerText = 'Select at least one option';
+    return;
+  }
+
+  passwordOutputString.style.color = '#e6e5ea';
+  passwordOutputString.className = '';
   let passwordLength = state['length'];
   let charString = concat(state);
   let password = '';
@@ -160,7 +177,6 @@ generate.addEventListener('click', function () {
 characterLengthDisplay.innerHTML = slider.value;
 
 slider.oninput = function () {
-  // output.innerHTML = this.value;
   characterLengthDisplay.innerHTML = this.value;
   gradientValue = ((this.value - this.min) / (this.max - this.min)) * 100;
   this.style.background =
